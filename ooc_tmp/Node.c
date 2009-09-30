@@ -16,6 +16,21 @@ lang__Void Node_init_impl(Node *this, Node *parent)
 	this->children = ArrayList_new(Pointer_class());
 }
 
+lang__Void Node_draw_impl(Node *this)
+{
+	glPushMatrix();
+	glTranslated(((lang__Double) (200)), ((lang__Double) (200)), ((lang__Double) (0)));
+	glBegin(((lang__UInt32) (GL_QUADS)));
+	glColor3ub(((lang__UInt) (240)), ((lang__UInt) (240)), ((lang__UInt) (240)));
+	glVertex2d(((lang__Double) (0 - 20)), ((lang__Double) (10)));
+	glVertex2d(((lang__Double) (20)), ((lang__Double) (10)));
+	glColor3ub(((lang__UInt) (100)), ((lang__UInt) (100)), ((lang__UInt) (100)));
+	glVertex2d(((lang__Double) (20)), ((lang__Double) (0 - 10)));
+	glVertex2d(((lang__Double) (0 - 20)), ((lang__Double) (0 - 10)));
+	glEnd();
+	glPopMatrix();
+}
+
 lang__Class *Node_class()
 {
 	static lang__Bool __done__ = false;
@@ -30,6 +45,7 @@ lang__Class *Node_class()
 			.__destroy__ = (lang__Void (*)(lang__Object *)) Node___destroy___impl,
 		},
 		.init = Node_init_impl,
+		.draw = Node_draw_impl,
 	};
 	lang__Class *classPtr = (lang__Class *) &class;
 	if(!__done__)
@@ -56,6 +72,12 @@ lang__Void Node___destroy__(Node *this)
 lang__Void Node_init(Node *this, Node *parent)
 {
 	((NodeClass *)((lang__Object *)this)->class)->init((Node *) this, parent);
+}
+
+
+lang__Void Node_draw(Node *this)
+{
+	((NodeClass *)((lang__Object *)this)->class)->draw((Node *) this);
 }
 
 
@@ -96,6 +118,7 @@ lang__Void _Node_load()
 		_lang_Interface_load();
 		_lang_stdio_load();
 		_lang_Int_load();
+		_gl_Gl_load();
 		_structs_ArrayList_load();
 	}
 }

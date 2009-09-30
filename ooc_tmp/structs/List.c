@@ -24,10 +24,10 @@ lang__Void List_addAll_atStart_impl(structs__List *this, lang__Int start, struct
 			uint8_t element[this->T->size];
 			
 			{
-				lang__Iterator *iter372 = List_iterator(list);
-				while (Iterator_hasNext(iter372))
+				lang__Iterator *iter389 = List_iterator(list);
+				while (Iterator_hasNext(iter389))
 				{
-					Iterator_next(iter372, element);
+					Iterator_next(iter389, element);
 					List_add(this, element);
 				}
 			};
@@ -45,9 +45,9 @@ lang__Void List_addAll_atStart_impl(structs__List *this, lang__Int start, struct
 	{
 		
 		{
-			lang__Class *gcall373;
-			Iterator_next(iter, &(gcall373));
-			List_add(this, (uint8_t*) &gcall373);
+			lang__Class *gcall390;
+			Iterator_next(iter, &(gcall390));
+			List_add(this, (uint8_t*) &gcall390);
 		};
 	}
 }
@@ -175,9 +175,9 @@ lang__Bool List_contains(structs__List *this, uint8_t * element)
 }
 
 
-void List_get(structs__List *this, lang__Pointer returnarg300, lang__Int index)
+void List_get(structs__List *this, lang__Pointer returnarg304, lang__Int index)
 {
-	((structs__ListClass *)((lang__Object *)this)->class)->get((structs__List *) this, returnarg300, index);
+	((structs__ListClass *)((lang__Object *)this)->class)->get((structs__List *) this, returnarg304, index);
 }
 
 
@@ -199,9 +199,9 @@ lang__Int List_lastIndexOf(structs__List *this, uint8_t * element)
 }
 
 
-void List_removeAt(structs__List *this, lang__Pointer returnarg304, lang__Int index)
+void List_removeAt(structs__List *this, lang__Pointer returnarg308, lang__Int index)
 {
-	((structs__ListClass *)((lang__Object *)this)->class)->removeAt((structs__List *) this, returnarg304, index);
+	((structs__ListClass *)((lang__Object *)this)->class)->removeAt((structs__List *) this, returnarg308, index);
 }
 
 
@@ -246,15 +246,15 @@ lang__Void List___load__()
 }
 
 
-void __OP_IDX_List_Int(lang__Pointer returnarg311, lang__Class *T, structs__List *list, lang__Int i)
+void __OP_IDX_List_Int(lang__Pointer returnarg315, lang__Class *T, structs__List *list, lang__Int i)
 {
 	
 	{
-		uint8_t gcall374[T->size];
-		List_get(list, gcall374, i);
-		if (returnarg311)
+		uint8_t gcall391[T->size];
+		List_get(list, gcall391, i);
+		if (returnarg315)
 		{
-			memcpy(((lang__Pointer) (returnarg311)), ((lang__Pointer) (gcall374)), ((lang__SizeT) (T->size)));
+			memcpy(((lang__Pointer) (returnarg315)), ((lang__Pointer) (gcall391)), ((lang__SizeT) (T->size)));
 		}
 		return;
 	};

@@ -33,14 +33,17 @@ typedef struct _TweeClass TweeClass;
 #include <sdl/Event.h>
 #include <gl/Gl.h>
 #include <glu/Glu.h>
+#include <Rect.h>
 
 struct _Twee
 {
 	struct _lang__Object __super__;
 	lang__Int x, y, bpp;
+	View *view;
 	lang__Bool running;
 	Node *root;
 	Node *current;
+	Node *focus;
 };
 
 
@@ -48,9 +51,11 @@ struct _TweeClass
 {
 	struct _lang__ObjectClass __super__;
 	lang__Void (*init)(Twee *);
+	lang__Void (*init_withRes)(Twee *, lang__Int, lang__Int, lang__Int);
 	lang__Void (*openScreen)(Twee *, lang__Int, lang__Int, lang__Int);
 	lang__Void (*setRes)(Twee *, lang__Int, lang__Int, lang__Int);
 	lang__Void (*start)(Twee *);
+	lang__Void (*zoom)(Twee *, lang__Double);
 };
 
 
@@ -64,12 +69,17 @@ lang__Void Twee___destroy___impl(Twee *this);
 Twee *Twee_new();
 lang__Void Twee_init(Twee *this);
 lang__Void Twee_init_impl(Twee *this);
+Twee *Twee_new_withRes(lang__Int x, lang__Int y, lang__Int bpp);
+lang__Void Twee_init_withRes(Twee *this, lang__Int x, lang__Int y, lang__Int bpp);
+lang__Void Twee_init_withRes_impl(Twee *this, lang__Int x, lang__Int y, lang__Int bpp);
 lang__Void Twee_openScreen(Twee *this, lang__Int x, lang__Int y, lang__Int bpp);
 lang__Void Twee_openScreen_impl(Twee *this, lang__Int x, lang__Int y, lang__Int bpp);
 lang__Void Twee_setRes(Twee *this, lang__Int x, lang__Int y, lang__Int bpp);
 lang__Void Twee_setRes_impl(Twee *this, lang__Int x, lang__Int y, lang__Int bpp);
 lang__Void Twee_start(Twee *this);
 lang__Void Twee_start_impl(Twee *this);
+lang__Void Twee_zoom(Twee *this, lang__Double z);
+lang__Void Twee_zoom_impl(Twee *this, lang__Double z);
 
 lang__Void _Twee_load();
 

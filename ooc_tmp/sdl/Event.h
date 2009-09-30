@@ -26,6 +26,11 @@ typedef struct _sdl__SDLEvent sdl__SDLEvent;
 #include <lang/Int.h>
 #include <sdl/Sdl.h>
 
+;
+;
+;
+;
+;
 lang__Class *EventStruct_class();
 lang__Class *Event_class();struct _sdl__SDLEvent 
 {

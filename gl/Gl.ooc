@@ -5,6 +5,7 @@ DEPTH_TEST: extern(GL_DEPTH_TEST) const UInt32
 COLOR_BUFFER_BIT: extern(GL_COLOR_BUFFER_BIT) const UInt32
 DEPTH_BUFFER_BIT: extern(GL_DEPTH_BUFFER_BIT) const UInt32
 MODELVIEW: extern(GL_MODELVIEW) const UInt32
+QUADS: extern(GL_QUADS) const UInt32
 
 GL: cover {
 	matrixMode: extern(glMatrixMode) static func(UInt32)
@@ -13,6 +14,7 @@ GL: cover {
 	enable: extern(glEnable) static func(UInt32)
 	vertex3d: extern(glVertex3d) static func(Double, Double, Double)
 	vertex2d: extern(glVertex2d) static func(Double, Double)
+	color3ub: extern(glColor3ub) static func(UInt, UInt, UInt)
 	rotated: extern(glRotated) static func(Double, Double, Double, Double)
 	scaled: extern(glScaled) static func(Double, Double, Double)
 	translated: extern(glTranslated) static func(Double, Double, Double)
@@ -20,4 +22,6 @@ GL: cover {
 	pushMatrix: extern(glPushMatrix) static func()
 	clear: extern(glClear) static func(UInt32)
 	flush: extern(glFlush) static func()
+	begin: extern(glBegin) static func(UInt32)
+	end: extern(glEnd) static func()
 }

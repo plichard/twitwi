@@ -313,11 +313,11 @@ void __OP_IDX_Array_Int(lang__Pointer returnarg218, lang__Class *T, structs__Arr
 {
 	
 	{
-		uint8_t gcall377[T->size];
-		Array_get(arr, gcall377, index);
+		uint8_t gcall394[T->size];
+		Array_get(arr, gcall394, index);
 		if (returnarg218)
 		{
-			memcpy(((lang__Pointer) (returnarg218)), ((lang__Pointer) (gcall377)), ((lang__SizeT) (T->size)));
+			memcpy(((lang__Pointer) (returnarg218)), ((lang__Pointer) (gcall394)), ((lang__SizeT) (T->size)));
 		}
 		return;
 	};

@@ -4,6 +4,8 @@ lang__Int main()
 {
 	GC_INIT();
 	_main_load();
+	Twee *twee = Twee_new();
+	Twee_start(twee);
 	return 0;
 }
 

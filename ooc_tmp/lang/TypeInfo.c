@@ -35,10 +35,10 @@ lang__String TypeInfo_toString(lang__TypeInfo this)
 			lang__TypeInfo param;
 			
 			{
-				lang__Iterator *iter375 = Array_iterator(this.params);
-				while (Iterator_hasNext(iter375))
+				lang__Iterator *iter392 = Array_iterator(this.params);
+				while (Iterator_hasNext(iter392))
 				{
-					Iterator_next(iter375, &(param));
+					Iterator_next(iter392, &(param));
 					StringBuffer_append_str(sb, TypeInfo_toString(param));
 					if (!isFirst)
 					{

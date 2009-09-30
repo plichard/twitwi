@@ -31,6 +31,7 @@ lang__Class *GLU_class()
 
 
 
+
 lang__Void _glu_Glu_load()
 {
 	static lang__Bool __done__ = false;

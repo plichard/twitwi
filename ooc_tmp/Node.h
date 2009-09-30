@@ -3,6 +3,7 @@
 #define ___Node__
 
 
+#include <GL/gl.h>
 struct _Node;
 typedef struct _Node Node;
 struct _NodeClass;
@@ -24,6 +25,7 @@ typedef struct _NodeClass NodeClass;
 #include <lang/Interface.h>
 #include <lang/stdio.h>
 #include <lang/Int.h>
+#include <gl/Gl.h>
 #include <structs/ArrayList.h>
 
 struct _Node
@@ -38,6 +40,7 @@ struct _NodeClass
 {
 	struct _lang__ObjectClass __super__;
 	lang__Void (*init)(Node *, Node *);
+	lang__Void (*draw)(Node *);
 };
 
 
@@ -51,6 +54,8 @@ lang__Void Node___destroy___impl(Node *this);
 Node *Node_new(Node *parent);
 lang__Void Node_init(Node *this, Node *parent);
 lang__Void Node_init_impl(Node *this, Node *parent);
+lang__Void Node_draw(Node *this);
+lang__Void Node_draw_impl(Node *this);
 
 lang__Void _Node_load();
 

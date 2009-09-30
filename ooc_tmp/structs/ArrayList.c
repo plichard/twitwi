@@ -54,10 +54,10 @@ lang__Void ArrayList_addAll_withIndex_impl(structs__ArrayList *this, lang__Int i
 		uint8_t element[this->T->size];
 		
 		{
-			lang__Iterator *iter376 = List_iterator(list);
-			while (Iterator_hasNext(iter376))
+			lang__Iterator *iter393 = List_iterator(list);
+			while (Iterator_hasNext(iter393))
 			{
-				Iterator_next(iter376, element);
+				Iterator_next(iter393, element);
 				ArrayList_add(this, element);
 			}
 		};
@@ -69,12 +69,12 @@ lang__Void ArrayList_clear_impl(structs__ArrayList *this)
 	this->size = 0;
 }
 
-void ArrayList_get_impl(structs__ArrayList *this, lang__Pointer returnarg268, lang__Int index)
+void ArrayList_get_impl(structs__ArrayList *this, lang__Pointer returnarg272, lang__Int index)
 {
 	ArrayList_checkIndex(this, index);
-	if (returnarg268)
+	if (returnarg272)
 	{
-		memcpy(((lang__Pointer) (returnarg268)), ((lang__Pointer) (this->data + index * this->T->size)), ((lang__SizeT) (this->T->size)));
+		memcpy(((lang__Pointer) (returnarg272)), ((lang__Pointer) (this->data + index * this->T->size)), ((lang__SizeT) (this->T->size)));
 	}
 	return;
 }
@@ -111,15 +111,15 @@ lang__Int ArrayList_lastIndexOf_impl(structs__ArrayList *this, uint8_t * element
 	return 0 - 1;
 }
 
-void ArrayList_removeAt_impl(structs__ArrayList *this, lang__Pointer returnarg271, lang__Int index)
+void ArrayList_removeAt_impl(structs__ArrayList *this, lang__Pointer returnarg275, lang__Int index)
 {
 	uint8_t element[this->T->size];
 	memcpy(((lang__Pointer) (element)), ((lang__Pointer) (this->data + index * this->T->size)), ((lang__SizeT) (this->T->size)));
 	memmove(((lang__Pointer) (this->data + (index * this->T->size))), ((lang__Pointer) (this->data + ((index + 1) * this->T->size))), ((lang__SizeT) ((this->size - index) * this->T->size)));
 	this->size -= 1;
-	if (returnarg271)
+	if (returnarg275)
 	{
-		memcpy(((lang__Pointer) (returnarg271)), ((lang__Pointer) (element)), ((lang__SizeT) (this->T->size)));
+		memcpy(((lang__Pointer) (returnarg275)), ((lang__Pointer) (element)), ((lang__SizeT) (this->T->size)));
 	}
 	return;
 }
@@ -302,9 +302,9 @@ lang__Void ArrayList_clear(structs__ArrayList *this)
 }
 
 
-void ArrayList_get(structs__ArrayList *this, lang__Pointer returnarg268, lang__Int index)
+void ArrayList_get(structs__ArrayList *this, lang__Pointer returnarg272, lang__Int index)
 {
-	((structs__ListClass *)((lang__Object *)this)->class)->get((structs__List *) this, returnarg268, index);
+	((structs__ListClass *)((lang__Object *)this)->class)->get((structs__List *) this, returnarg272, index);
 }
 
 
@@ -320,9 +320,9 @@ lang__Int ArrayList_lastIndexOf(structs__ArrayList *this, uint8_t * element)
 }
 
 
-void ArrayList_removeAt(structs__ArrayList *this, lang__Pointer returnarg271, lang__Int index)
+void ArrayList_removeAt(structs__ArrayList *this, lang__Pointer returnarg275, lang__Int index)
 {
-	((structs__ListClass *)((lang__Object *)this)->class)->removeAt((structs__List *) this, returnarg271, index);
+	((structs__ListClass *)((lang__Object *)this)->class)->removeAt((structs__List *) this, returnarg275, index);
 }
 
 
@@ -418,14 +418,14 @@ lang__Bool ArrayListIterator_hasNext_impl(structs__ArrayListIterator *this)
 	return this->index < ArrayList_size(this->list);
 }
 
-void ArrayListIterator_next_impl(structs__ArrayListIterator *this, lang__Pointer returnarg288)
+void ArrayListIterator_next_impl(structs__ArrayListIterator *this, lang__Pointer returnarg292)
 {
 	uint8_t element[this->T->size];
 	ArrayList_get(this->list, element, this->index);
 	this->index += 1;
-	if (returnarg288)
+	if (returnarg292)
 	{
-		memcpy(((lang__Pointer) (returnarg288)), ((lang__Pointer) (element)), ((lang__SizeT) (this->T->size)));
+		memcpy(((lang__Pointer) (returnarg292)), ((lang__Pointer) (element)), ((lang__SizeT) (this->T->size)));
 	}
 	return;
 }
@@ -483,9 +483,9 @@ lang__Bool ArrayListIterator_hasNext(structs__ArrayListIterator *this)
 }
 
 
-void ArrayListIterator_next(structs__ArrayListIterator *this, lang__Pointer returnarg288)
+void ArrayListIterator_next(structs__ArrayListIterator *this, lang__Pointer returnarg292)
 {
-	((lang__IteratorClass *)((lang__Object *)this)->class)->next((lang__Iterator *) this, returnarg288);
+	((lang__IteratorClass *)((lang__Object *)this)->class)->next((lang__Iterator *) this, returnarg292);
 }
 
 

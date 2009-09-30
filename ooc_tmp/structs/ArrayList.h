@@ -75,14 +75,14 @@ lang__Void ArrayList_addAll_withIndex(structs__ArrayList *this, lang__Int index,
 lang__Void ArrayList_addAll_withIndex_impl(structs__ArrayList *this, lang__Int index, structs__List *list);
 lang__Void ArrayList_clear(structs__ArrayList *this);
 lang__Void ArrayList_clear_impl(structs__ArrayList *this);
-void ArrayList_get(structs__ArrayList *this, lang__Pointer returnarg268, lang__Int index);
-void ArrayList_get_impl(structs__ArrayList *this, lang__Pointer returnarg268, lang__Int index);
+void ArrayList_get(structs__ArrayList *this, lang__Pointer returnarg272, lang__Int index);
+void ArrayList_get_impl(structs__ArrayList *this, lang__Pointer returnarg272, lang__Int index);
 lang__Int ArrayList_indexOf(structs__ArrayList *this, uint8_t * element);
 lang__Int ArrayList_indexOf_impl(structs__ArrayList *this, uint8_t * element);
 lang__Int ArrayList_lastIndexOf(structs__ArrayList *this, uint8_t * element);
 lang__Int ArrayList_lastIndexOf_impl(structs__ArrayList *this, uint8_t * element);
-void ArrayList_removeAt(structs__ArrayList *this, lang__Pointer returnarg271, lang__Int index);
-void ArrayList_removeAt_impl(structs__ArrayList *this, lang__Pointer returnarg271, lang__Int index);
+void ArrayList_removeAt(structs__ArrayList *this, lang__Pointer returnarg275, lang__Int index);
+void ArrayList_removeAt_impl(structs__ArrayList *this, lang__Pointer returnarg275, lang__Int index);
 lang__Bool ArrayList_remove(structs__ArrayList *this, uint8_t * element);
 lang__Bool ArrayList_remove_impl(structs__ArrayList *this, uint8_t * element);
 lang__Void ArrayList_set(structs__ArrayList *this, lang__Int index, uint8_t * element);
@@ -128,8 +128,8 @@ lang__Void ArrayListIterator_init(structs__ArrayListIterator *this, structs__Arr
 lang__Void ArrayListIterator_init_impl(structs__ArrayListIterator *this, structs__ArrayList *list);
 lang__Bool ArrayListIterator_hasNext(structs__ArrayListIterator *this);
 lang__Bool ArrayListIterator_hasNext_impl(structs__ArrayListIterator *this);
-void ArrayListIterator_next(structs__ArrayListIterator *this, lang__Pointer returnarg288);
-void ArrayListIterator_next_impl(structs__ArrayListIterator *this, lang__Pointer returnarg288);
+void ArrayListIterator_next(structs__ArrayListIterator *this, lang__Pointer returnarg292);
+void ArrayListIterator_next_impl(structs__ArrayListIterator *this, lang__Pointer returnarg292);
 
 lang__Void _structs_ArrayList_load();
 

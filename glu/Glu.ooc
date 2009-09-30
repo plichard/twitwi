@@ -8,4 +8,5 @@ GLU: cover {
 	sphere: extern(gluSphere) static func(Quadric, Double , Int, Int)
 	newQuadric: extern(gluNewQuadric) static func() -> Quadric
 	lookAt: extern(gluLookAt) static func(Double,Double,Double,Double,Double,Double,Double,Double,Double)
+	ortho2D: extern(gluOrtho2D) static func (Int, Int, Int, Int)
 }

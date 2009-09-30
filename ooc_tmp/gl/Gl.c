@@ -27,6 +27,9 @@ lang__Class *GL_class()
 
 
 
+
+
+
 lang__Void _gl_Gl_load()
 {
 	static lang__Bool __done__ = false;
