@@ -11,6 +11,7 @@ import lang/String
 	INIT_NOPARACHUTE : extern (SDL_INIT_NOPARACHUTE) const Int
 	INIT_EVENTTHREAD : extern (SDL_INIT_EVENTTHREAD) const Int
 	INIT_EVERYTHING  : extern (SDL_INIT_EVERYTHING) const Int
+	QUIT: extern(SDL_QUIT) const Int
 	
 	SWSURFACE: extern(SDL_SWSURFACE)	const Int/* Surface is in system memory */
 	HWSURFACE: extern(SDL_HWSURFACE)	const Int/* Surface is in video memory */

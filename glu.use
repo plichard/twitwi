@@ -1,5 +1,5 @@
 Name: GLU
 Description: glu
-Pkgs: glu
+#Pkgs: glu
 Includes: GL/glu.h
 

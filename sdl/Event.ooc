@@ -1,8 +1,13 @@
 use sdl
-import sdl.Sdl
+import sdl/Sdl
 
-Event: cover from SDL_Event
+EventStruct: cover from SDL_Event {
+	type: extern Int
+}
+
+Event: cover from EventStruct*
+
 SDLEvent: cover {
-	wait: extern(SDL_WaitEvent) static func(Event*) -> Int
-	
+	wait: extern(SDL_WaitEvent) static func(Event) -> Int
+	poll: extern(SDL_PollEvent) static func(Event) -> Int
 }
